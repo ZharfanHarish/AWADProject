@@ -19,8 +19,7 @@
 <h1>Criteria</h1>
 <ul>
   <li>
-    <label>Version Control</label>
-    <i class="fa fa-check"></i>
+    <label>Version Control</label>>
   </li>
   <li>
     <label>System Analysis and Design</label>
