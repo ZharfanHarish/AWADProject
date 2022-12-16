@@ -7,5 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Project extends Model
 {
-    use HasFactory;
+    public function student(){
+        return $this->hasOne(Student::class);
+    }
+
+    public function lecturer(){
+        return $this->hasMany(Lecturer::class);
+    }
 }

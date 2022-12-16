@@ -1,5 +1,5 @@
 
-<h1>Version</h1>
+<h1>Version Changes</h1>
 <ul>
     <li>Version 1 
     <ul>
@@ -10,6 +10,12 @@
         <li>env. file modified to correct port</li>
         <li>Project, Student and Lecturer migration file migrated</li>
     </ul>
+    <li>Version 2 
+    <ul>
+        <li>Implemented Laravel UI</li>
+        <li>Implemented Auth Bootstrap</li>
+        <li>Implemented npm</li>
+    </ul>
     </li>
 </ul>
 
@@ -17,7 +23,7 @@
 <h1>Criteria</h1>
 <ul>
   <li>
-    <label>Version Control</label>>
+    <label>Version Control</label>
   </li>
   <li>
     <label>System Analysis and Design</label>
