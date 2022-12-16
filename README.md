@@ -1,7 +1,7 @@
 
 <h1>Version</h1>
 <ul>
-    <li>Version 1
+    <li>Version 1 
     <ul>
         <li>First Commit</li>
         <li>Project, Student and Lecturer model file constructed</li>
@@ -12,8 +12,6 @@
     </ul>
     </li>
 </ul>
-
-<br><br><br>
 
 
 <h1>Criteria</h1>
