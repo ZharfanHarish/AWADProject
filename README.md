@@ -2,7 +2,7 @@
 <h1>Version Changes</h1>
 <ul>
     <li>Version 1 
-    <ul>
+    <ul><br>
         <li>First Commit</li>
         <li>Project, Student and Lecturer model file constructed</li>
         <li>Project, Student and Lecturer controller file constructed</li>
@@ -11,17 +11,23 @@
         <li>Project, Student and Lecturer migration file migrated</li>
     </ul>
     <li>Version 2 
-    <ul>
+    <ul><br>
         <li>Implemented Laravel UI</li>
         <li>Implemented Auth Bootstrap</li>
         <li>Implemented npm</li>
     </ul>
-    </li>
+    </li><br>
     <li>Version 3 
     <ul>
         <li>Implemented Relationship among models</li>
         <li>User table altered with adding 'lecturer_id' column</li>
-    </ul>
+    </ul><br>
+    <li>Version 4
+    <ul>
+        <li>Lecturer table altered with removing 'authorization' column</li>
+        <li>User table altered with removing 'lecturer_id' and adding 'role' column</li>
+        <li>Fixed Model Relationship</li>
+    </ul><br>
     </li>
 </ul>
 

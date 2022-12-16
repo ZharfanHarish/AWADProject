@@ -14,7 +14,8 @@ return new class extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->integer('lecturer_id')->references('id')->on('lecturers');
+            $table->dropColumn('lecturer_id');
+            $table->enum('role',['supervisor','lecturer']);
         });
     }
 
@@ -26,7 +27,8 @@ return new class extends Migration
     public function down()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->dropColumn('lecturer_id');
+            $table->integer('lecturer_id')->references('id')->on('lecturers');
+            $table->dropColumn('role');
         });
     }
 };

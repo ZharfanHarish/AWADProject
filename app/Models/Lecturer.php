@@ -12,14 +12,14 @@ class Lecturer extends Model
     use HasFactory;
 
     public function supervise(){
-        return $this->hasMany(Project::class, 'supervisor_id');
+        return $this->hasMany(Project::class, 'supervisor_id','id');
     }
 
     public function examine(){
         return json_encode(
             array_merge(
-                json_decode(($this->hasMany(Project::class, 'examiner_one_id')), true),
-                json_decode(($this->hasMany(Project::class, 'examiner_two_id')), true)
+                json_decode(($this->hasMany(Project::class, 'examiner_one_id', 'id')), true),
+                json_decode(($this->hasMany(Project::class, 'examiner_two_id', 'id')), true)
         ));
     }
 }
