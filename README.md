@@ -31,7 +31,8 @@
     <li>Version 5
     <ul>
         <li>Added 'lecturer_id' back into user table</li>
-        <li>Added relationship user-lecturer (integrity constraints)</li>
+        <li>Added relationship user-lecturer</li>
+        <li>Fixes Model Relationship</li>
     </ul><br>
     </li>
 </ul>

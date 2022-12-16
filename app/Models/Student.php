@@ -10,6 +10,6 @@ class Student extends Model
     use HasFactory;
 
     public function project(){
-        return $this->hasOne(Project::class);
+        return $this->hasOne(Project::class,'student_id','id');
     }
 }

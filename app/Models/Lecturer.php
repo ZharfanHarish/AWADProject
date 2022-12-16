@@ -22,4 +22,8 @@ class Lecturer extends Model
                 json_decode(($this->hasMany(Project::class, 'examiner_two_id', 'id')), true)
         ));
     }
+
+    public function user(){
+        return $this->belongsTo(User::class, 'id', 'student_id');
+    }
 }
