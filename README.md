@@ -20,22 +20,18 @@
 <ul>
   <li>
     <label>Version Control</label>
-    <input type="checkbox"><br><br>
+    <i class="fa fa-check"></i>
   </li>
   <li>
     <label>System Analysis and Design</label>
-    <input type="checkbox"><br><br>
   </li>
   <li>
     <label>Front-end UI/UX</label>
-    <input type="checkbox"><br><br>
   </li>
   <li>
     <label>System Implementation using Laravel</label>
-    <input type="checkbox"><br><br>
   </li>
   <li>
     <label>Q&A</label>
-    <input type="checkbox"><br><br>
   </li>
 </ul>
