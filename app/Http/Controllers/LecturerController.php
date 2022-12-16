@@ -7,14 +7,10 @@ use Illuminate\Http\Request;
 
 class LecturerController extends Controller
 {
-    public function __construct()            // this function use to differentiate authentication
-    {
-        $this->middleware('auth');
-    }
     
     public function index()
     {
-        return 'test';
+        return Lecturer::with('supervise')->get();
     }
 
     /**

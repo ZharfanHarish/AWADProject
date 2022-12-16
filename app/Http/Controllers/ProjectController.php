@@ -14,7 +14,7 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        //
+        return Project::with('first_examiner','second_examiner')->get();
     }
 
     /**

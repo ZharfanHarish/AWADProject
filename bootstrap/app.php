@@ -52,4 +52,4 @@ $app->singleton(
 |
 */
 
-return $app;
+return $app; //test

@@ -32,7 +32,12 @@
     <ul>
         <li>Added 'lecturer_id' back into user table</li>
         <li>Added relationship user-lecturer</li>
-        <li>Fixes Model Relationship</li>
+        <li>Fixed Model Relationship</li>
+    </ul><br>
+    </li>
+    <li>Version 6
+    <ul>
+        <li>Fixed Model Relationship</li>
     </ul><br>
     </li>
 </ul>
