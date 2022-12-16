@@ -7,14 +7,14 @@ use Illuminate\Http\Request;
 
 class LecturerController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    public function __construct()            // this function use to differentiate authentication
+    {
+        $this->middleware('auth');
+    }
+    
     public function index()
     {
-        //
+        return 'test';
     }
 
     /**

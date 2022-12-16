@@ -17,6 +17,12 @@
         <li>Implemented npm</li>
     </ul>
     </li>
+    <li>Version 3 
+    <ul>
+        <li>Implemented Relationship among models</li>
+        <li>User table altered with adding 'lecturer_id' column</li>
+    </ul>
+    </li>
 </ul>
 
 
