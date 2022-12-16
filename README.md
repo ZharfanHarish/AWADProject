@@ -38,6 +38,17 @@
     <li>Version 6
     <ul>
         <li>Fixed Model Relationship</li>
+        <li>Alter Project table by modifying certain columns into enumeration data type</li>
+    </ul><br>
+    </li>
+    <li>Version 7
+    <ul>
+        <li>Constructed Home Page</li>
+        <li>Constructed few blade Pages</li>
+        <li>Added student create function</li>
+        <li>Added project create function</li>
+        <li>Minor changes in the database</li>
+        <li>Added view all students list function</li>
     </ul><br>
     </li>
 </ul>

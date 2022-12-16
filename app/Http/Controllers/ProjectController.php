@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Project;
+use App\Models\Student;
+use App\Models\Lecturer;
 use Illuminate\Http\Request;
 
 class ProjectController extends Controller
@@ -24,7 +26,11 @@ class ProjectController extends Controller
      */
     public function create()
     {
-        //
+        $students = Student::all();
+
+        $lecturers = Lecturer::all();
+
+        return view('registerproject', compact(['students','lecturers']));
     }
 
     /**
@@ -35,7 +41,18 @@ class ProjectController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'title' => 'required',
+            'start_date' => 'required',
+            'end_date' => 'required',
+            'duration_in_month' => 'required',
+            'student_id' => 'required',
+            'supervisor_id' => 'required',
+        ]);
+
+        Project::create($request->all());
+
+        return redirect()->route('home')->with('success','New project has been added');
     }
 
     /**

@@ -7,6 +7,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class Project extends Model
 {
+    protected $fillable = [
+        'title',
+        'start_date',
+        'end_date',
+        'duration_in_month',
+        'student_id',
+        'supervisor_id',
+    ];
+
     use HasFactory;
 
     public function student(){

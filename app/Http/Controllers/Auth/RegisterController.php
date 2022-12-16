@@ -68,7 +68,6 @@ class RegisterController extends Controller
         $lecturer_id = Lecturer::create([
             'full_name' => $data['name'],
             'email' => $data['email'],
-            'authorization' => 0,
             'contact_no' => $data['contact_no'],
         ])->id;
 
@@ -76,6 +75,7 @@ class RegisterController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+            'role' => 'lecturer',
             'lecturer_id' => $lecturer_id,
         ]);
     }

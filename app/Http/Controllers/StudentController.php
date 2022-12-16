@@ -4,17 +4,21 @@ namespace App\Http\Controllers;
 
 use App\Models\Student;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\View;
 
 class StudentController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
     public function index()
     {
-        return Student::with('project')->get();
+        $students = Student::all();
+        $view = View::make('layouts.app');
+        $view->nest('student', 'student', compact('students'));
+        return $view;
     }
 
     /**
@@ -24,7 +28,7 @@ class StudentController extends Controller
      */
     public function create()
     {
-        //
+        return view('registerstudent');
     }
 
     /**
@@ -35,7 +39,16 @@ class StudentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'full_name' => 'required',
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'year' => 'required',
+            'contact_no' => 'required',
+        ]);
+
+        Student::create($request->all());
+
+        return redirect()->route('home')->with('success','New student has been added');
     }
 
     /**
