@@ -18,11 +18,20 @@
                 <?php $i = 1 ?>
                 <table class="table">
                         <tr>
-                            <th>No.</th><th>Project Title</th><th>Student Name</th><th>Examiner 1</th><th>Examiner 2</th><th>Project Progress</th><th>Project Status</th><th>Action</th>
+                            <th>No.</th><th>Project Title</th><th>Category</th><th>Student Name</th><th>Duration (in month)</th><th>Supervisor</th><th>Project Progress</th><th>Project Status</th><th>Able to graduate?</th>
                         </tr>
                 @foreach ($projects as $p)
                         <tr>
-                            <form method='GET' action="{{ route('manage.edit', $p->id) }}"><td><?php echo $i++ ?></td><td>{{ $p->title }}</td><td>{{ $p->student->full_name }}</td><td>@if($p->first_examiner) {{$p->first_examiner->full_name}} @else - @endif</td><td>@if($p->second_examiner) {{$p->second_examiner->full_name}} @else - @endif</td><td>{{ $p->project_progress }}</td><td>{{ $p->project_status}}</td><input type="hidden" id="project" name="project" value="{{ $p }}"><td><button type="submit" class="btn btn-primary">Manage</button></td></form>
+                            <td><?php echo $i++ ?></td><td>{{ $p->title }}</td><td>{{ $p->category }}</td><td>{{ $p->student->full_name }}</td><td>{{ $p->duration_in_month }}</td><td>{{ $p->supervisor->full_name }}</td><td>{{ $p->project_progress }}</td><td>{{ $p->project_status }}</td>
+                            <?php
+                                $style_trigger = '';
+                                $graduate_status = 'Not yet';
+                                if ( $p->project_status == "Completed" ){
+                                    $style_trigger = 'background-color:#CAFFBD';
+                                    $graduate_status = 'Yes';
+                                }
+                            ?>
+                            <td style="{{ $style_trigger }}">{{ $graduate_status }}</td>
                         </tr>
                 @endforeach
                 </table>   

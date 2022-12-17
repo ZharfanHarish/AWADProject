@@ -16,7 +16,9 @@ class Project extends Model
         'category',
         'supervisor_id',
         'examiner_one_id',
-        'examiner_two_id'
+        'examiner_two_id',
+        'project_progress',
+        'project_status'
     ];
 
     use HasFactory;

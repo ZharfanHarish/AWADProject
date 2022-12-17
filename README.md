@@ -56,7 +56,12 @@
         <li>Modified routes in web.php</li>
         <li>Minor changes in the database [column 'category' changed into varchar(255)]</li>
     </ul><br>
-    </li>
+    <li>Version 9
+    <ul>
+        <li>Constructed View All Project and Examinee Project Blade Pages</li>
+        <li>Added Examinee Controller</li>
+        <li>Modified routes in web.php</li>
+    </ul><br>
 </ul>
 
 

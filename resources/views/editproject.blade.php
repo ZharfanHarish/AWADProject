@@ -5,13 +5,13 @@
     <div class="row justify-content-center">
         <div class="col-md-11">
             <div class="card">
-                <div class="card-header"><div class="pagination">
+            <div class="card-header"><div class="pagination">
                     <a href="{{ route('student.create') }}">[ Register Student ]</a>
                     <a href="{{ route('student.index') }}">[ View Students ]</a>
                     <a href="{{ route('project.create') }}">[ Register Project ]</a>
                     <a href="{{ route('manage.index') }}">[ Manage Supervisee Project ]</a>
-                    <a href="#">[ View All Project ]</a>
-                    <a href="#">[ View Examinee Project ]</a>
+                    <a href="{{ route('project.index') }}">[ View All Project ]</a>
+                    <a href="{{ route('examinee.index') }}">[ View Examinee Project ]</a>
                 </div></div>
 
                 <div class="card-body">
@@ -46,19 +46,49 @@
                     </select><br><br>
 
                     <label for="student_id">Student Name:</label><br>
-                    <a>{{ $pointer->student->full_name }}</a><br><br>
+                    <a><b>{{ $pointer->student->full_name }}</b></a><br><br>
 
-                    <label for="supervisor_id">Choose a supervisor:</label>
-                    <select id="supervisor_id" name="supervisor_id" required>
-                        <option value="">-- None --</option>
-                        @foreach($lecturers as $l)
-                        <option value="{{ $l->id }}"
-                        <?php
-                        if($pointer->supervisor_id == $l->id)
-                        echo 'selected'; 
-                        ?>
-                        >{{ $l->full_name }}</option>
-                        @endforeach
+                    <label for="project_progress">Project Progress:</label><br>
+                    <select id="project_progress" name="project_progress" required>
+                        @if($pointer->project_progress == 'Milestone 1')
+                        <option value='Milestone 1' selected>Milestone 1</option>
+                        @else
+                        <option value='Milestone 1'>Milestone 1</option>
+                        @endif
+                        @if($pointer->project_progress == 'Milestone 2')
+                        <option value='Milestone 2' selected>Milestone 2</option>
+                        @else
+                        <option value='Milestone 2'>Milestone 2</option>
+                        @endif
+                        @if($pointer->project_progress == 'Final Report')
+                        <option value='Final Report' selected>Final Report</option>
+                        @else
+                        <option value='Final Report'>Final Report</option>
+                        @endif
+                    </select><br><br>
+
+                    <label for="project_status">Project Progress:</label><br>
+                    <select id="project_status" name="project_status" required>
+                        @if($pointer->project_status == 'On Track')
+                        <option value='On Track' selected>On Track</option>
+                        @else
+                        <option value='On Track'>On Track</option>
+                        @endif
+                        @if($pointer->project_status == 'Delayed')
+                        <option value='Delayed' selected>Delayed</option>
+                        @else
+                        <option value='Delayed'>Delayed</option>
+                        @endif
+                        @if($pointer->project_status == 'Extended')
+                        <option value='Extended' selected>Extended</option>
+                        @else
+                        <option value='Extended'>Extended</option>
+                        @endif
+                        @if($pointer->project_status == 'Completed')
+                        <option value='Completed' selected>Completed</option>
+                        @else
+                        <option value='Completed'>Completed</option>
+                        @endif
                     </select><br><br>
 
                     <label for="examiner_one_id">Choose a first examiner:</label><br>
@@ -91,7 +121,7 @@
 
                     <button type="submit" value="Submit" class="btn btn-primary">Update</button>
                 </form>
-                </td><td style='width:45%'><form method='DELETE' action=''><?php for($x=0; $x<14; $x++){ echo '<br><br>'; } ?>
+                </td><td style='width:45%'><form method='DELETE' action=''><?php for($x=0; $x<16; $x++){ echo '<br><br>'; } ?>
                 <button type="submit" class="btn btn-danger">Delete</button></form></td></tr></table>
                 </div>
             </div>

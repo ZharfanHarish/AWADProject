@@ -34,7 +34,8 @@ class ManageController extends Controller
             'end_date' => 'required',
             'duration_in_month' => 'required',
             'category' => 'required',
-            'supervisor_id' => 'required',
+            'project_progress' => 'required',
+            'project_status' => 'required',
         ]);
 
         Project::find($id)->update($request->all());

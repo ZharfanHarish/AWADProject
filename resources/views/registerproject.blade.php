@@ -5,13 +5,13 @@
     <div class="row justify-content-center">
         <div class="col-md-11">
             <div class="card">
-                <div class="card-header"><div class="pagination">
+            <div class="card-header"><div class="pagination">
                     <a href="{{ route('student.create') }}">[ Register Student ]</a>
                     <a href="{{ route('student.index') }}">[ View Students ]</a>
                     <a href="{{ route('project.create') }}">[ Register Project ]</a>
                     <a href="{{ route('manage.index') }}">[ Manage Supervisee Project ]</a>
-                    <a href="#">[ View All Project ]</a>
-                    <a href="#">[ View Examinee Project ]</a>
+                    <a href="{{ route('project.index') }}">[ View All Project ]</a>
+                    <a href="{{ route('examinee.index') }}">[ View Examinee Project ]</a>
                 </div></div>
 
                 <div class="card-body">
@@ -52,6 +52,10 @@
                         <option value='{{$l->id}}'>{{$l->full_name}}</option>
                         @endforeach
                     </select><br><br>
+
+                    <input type="hidden" id="project_progress" name="project_progress" value="Milestone 1">
+
+                    <input type="hidden" id="project_status" name="project_status" value="On Track">
 
                     <input type="submit" value="Submit">
                 </form>
