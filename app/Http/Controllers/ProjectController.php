@@ -16,7 +16,7 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        return Project::with('first_examiner','second_examiner')->get();
+        //
     }
 
     /**
@@ -47,6 +47,7 @@ class ProjectController extends Controller
             'end_date' => 'required',
             'duration_in_month' => 'required',
             'student_id' => 'required',
+            'category' => 'required',
             'supervisor_id' => 'required',
         ]);
 

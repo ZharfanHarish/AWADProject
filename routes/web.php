@@ -5,6 +5,7 @@ use App\Http\Controllers\LecturerController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\StudentController;
+use App\Http\Controllers\ManageController;
 
 
 /*
@@ -31,3 +32,7 @@ Route::resource('lecturer', LecturerController::class);
 Route::resource('student', StudentController::class);
 
 Route::resource('project', ProjectController::class);
+
+Route::resource('manage', ManageController::class);
+
+Route::POST('/project/update/{id}',[ManageController::class, 'update'])->name('project.originalupdate');

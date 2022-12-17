@@ -31,7 +31,7 @@
                     <a href="{{ route('student.create') }}">[ Register Student ]</a>
                     <a href="{{ route('student.index') }}">[ View Students ]</a>
                     <a href="{{ route('project.create') }}">[ Register Project ]</a>
-                    <a href="#">[ Manage Supervisee Project ]</a>
+                    <a href="{{ route('manage.index') }}">[ Manage Supervisee Project ]</a>
                     <a href="#">[ View All Project ]</a>
                     <a href="#">[ View Examinee Project ]</a>
                 </div></div>

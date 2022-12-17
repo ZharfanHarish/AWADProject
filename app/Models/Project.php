@@ -13,7 +13,10 @@ class Project extends Model
         'end_date',
         'duration_in_month',
         'student_id',
+        'category',
         'supervisor_id',
+        'examiner_one_id',
+        'examiner_two_id'
     ];
 
     use HasFactory;

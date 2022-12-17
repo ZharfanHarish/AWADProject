@@ -44,11 +44,17 @@
     <li>Version 7
     <ul>
         <li>Constructed Home Page</li>
-        <li>Constructed few blade Pages</li>
+        <li>Constructed Create Student and View all Studeng Blade Pages</li>
         <li>Added student create function</li>
         <li>Added project create function</li>
         <li>Minor changes in the database</li>
         <li>Added view all students list function</li>
+    </ul><br>
+    <li>Version 8
+    <ul>
+        <li>Constructed Management Page</li>
+        <li>Modified routes in web.php</li>
+        <li>Minor changes in the database [column 'category' changed into varchar(255)]</li>
     </ul><br>
     </li>
 </ul>

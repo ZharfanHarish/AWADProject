@@ -18,14 +18,14 @@
                 <?php $i = 1 ?>
                 <table class="table">
                         <tr>
-                            <th>No.</th><th>Full Name</th><th>Email</th><th>Year</th>
+                            <th>No.</th><th>Project Title</th><th>Student Name</th><th>Examiner 1</th><th>Examiner 2</th><th>Action</th>
                         </tr>
-                @foreach ($students as $s)
+                @foreach ($projects as $p)
                         <tr>
-                            <td><?php echo $i++ ?></td><td>{{ $s->full_name }}</td><td>{{ $s->email }}</td><td>{{ $s->year }}</td>
+                            <form method='GET' action="{{ route('manage.edit', $p->id) }}"><td><?php echo $i++ ?></td><td>{{ $p->title }}</td><td>{{ $p->student->full_name }}</td><td>@if($p->first_examiner) {{$p->first_examiner->full_name}} @else - @endif</td><td>@if($p->second_examiner) {{$p->second_examiner->full_name}} @else - @endif</td><input type="hidden" id="project" name="project" value="{{ $p }}"><td><button type="submit" class="btn btn-primary">Manage</button></td></form>
                         </tr>
                 @endforeach
-                </table>    
+                </table>   
                 </div>
             </div>
         </div>
