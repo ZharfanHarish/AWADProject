@@ -20,6 +20,8 @@ class ManageController extends Controller
 
     public function edit($id){
         $pointer = Project::find($id);
+        if(Auth::user()->lecturer_id != $pointer->supervisor_id)
+            return redirect()->route('home')->with('failure','Access Denied');;
         $lecturers = Lecturer::all();
         $view = View::make('layouts.app');
         $view->nest('editproject','editproject',compact(['pointer','lecturers']));

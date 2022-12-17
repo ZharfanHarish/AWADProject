@@ -67,6 +67,11 @@
         <li>Added Delete functions</li>
         <li>Constructed Authorization access between Coordinator and Supervisors in blade files</li>
     </ul><br>
+    <li>Version 11
+    <ul>
+        <li>Improved Authorization Logic (Presentation and Routes)</li>
+        <li></li>
+    </ul><br>
 </ul>
 
 

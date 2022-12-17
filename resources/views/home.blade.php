@@ -1,27 +1,5 @@
 @extends('layouts.app')
 
-@section('kontan')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
-
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    {{ __('You are logged in!') }}
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-@endsection
-
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
@@ -44,7 +22,11 @@
                     @if(session('success'))
                         <div class='alert alert-success'>{{ session('success') }}</div>
                     @else
-                    <center><h3>Welcome Back <h3>{{Auth::User()->name}}</h3> click any pagination above to start</h3></center>
+                        @if(session('failure'))
+                        <div class='alert alert-danger'>{{ session('failure') }}</div>
+                        @else
+                        <center><h3>Welcome Back <h3>{{Auth::User()->name}}</h3> click any tab above to start</h3></center>
+                        @endif
                     @endif
                 </div>
             </div>

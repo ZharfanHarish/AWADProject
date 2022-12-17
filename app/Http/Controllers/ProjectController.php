@@ -6,6 +6,7 @@ use App\Models\Project;
 use App\Models\Student;
 use App\Models\Lecturer;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ProjectController extends Controller
 {
@@ -16,8 +17,10 @@ class ProjectController extends Controller
      */
     public function index()
     {
+        if(Auth::user()->role != 'coordinator')
+            return redirect()->route('home');
         $projects = Project::all();
-        return view('viewallproject', compact('projects'));
+        return view('viewallproject', compact('projects'))->with('failure','Access Denied');
     }
 
     /**
@@ -27,6 +30,9 @@ class ProjectController extends Controller
      */
     public function create()
     {
+        if(Auth::user()->role != 'coordinator')
+            return redirect()->route('home')->with('failure','Access Denied');;
+
         $students = Student::all();
 
         $lecturers = Lecturer::all();
