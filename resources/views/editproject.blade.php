@@ -6,11 +6,15 @@
         <div class="col-md-11">
             <div class="card">
             <div class="card-header"><div class="pagination">
-                    <a href="{{ route('student.create') }}">[ Register Student ]</a>
+            <a href="{{ route('student.create') }}">[ Register Student ]</a>
                     <a href="{{ route('student.index') }}">[ View Students ]</a>
+                    @can('isCoordinator')
                     <a href="{{ route('project.create') }}">[ Register Project ]</a>
+                    @endcan
                     <a href="{{ route('manage.index') }}">[ Manage Supervisee Project ]</a>
+                    @can('isCoordinator')
                     <a href="{{ route('project.index') }}">[ View All Project ]</a>
+                    @endcan
                     <a href="{{ route('examinee.index') }}">[ View Examinee Project ]</a>
                 </div></div>
 
@@ -121,8 +125,12 @@
 
                     <button type="submit" value="Submit" class="btn btn-primary">Update</button>
                 </form>
-                </td><td style='width:45%'><form method='DELETE' action=''><?php for($x=0; $x<16; $x++){ echo '<br><br>'; } ?>
-                <button type="submit" class="btn btn-danger">Delete</button></form></td></tr></table>
+                </td><td style='width:45%'><form method='POST' action="{{ route('project.originaldestroy', $pointer->id) }}"><?php for($x=0; $x<16; $x++){ echo '<br><br>'; } ?>
+                @csrf
+                @method('delete')
+                <button type="submit" class="btn btn-danger" onclick="myFunction()">Delete</button></form></td>
+                
+            </tr></table>
                 </div>
             </div>
         </div>

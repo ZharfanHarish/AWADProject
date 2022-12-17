@@ -62,6 +62,11 @@
         <li>Added Examinee Controller</li>
         <li>Modified routes in web.php</li>
     </ul><br>
+    <li>Version 10
+    <ul>
+        <li>Added Delete functions</li>
+        <li>Constructed Authorization access between Coordinator and Supervisors in blade files</li>
+    </ul><br>
 </ul>
 
 

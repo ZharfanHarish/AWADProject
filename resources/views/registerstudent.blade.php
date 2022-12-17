@@ -5,12 +5,16 @@
     <div class="row justify-content-center">
         <div class="col-md-11">
             <div class="card">
-            <div class="card-header"><div class="pagination">
-                    <a href="{{ route('student.create') }}">[ Register Student ]</a>
+                <div class="card-header"><div class="pagination">
+                <a href="{{ route('student.create') }}">[ Register Student ]</a>
                     <a href="{{ route('student.index') }}">[ View Students ]</a>
+                    @can('isCoordinator')
                     <a href="{{ route('project.create') }}">[ Register Project ]</a>
+                    @endcan
                     <a href="{{ route('manage.index') }}">[ Manage Supervisee Project ]</a>
+                    @can('isCoordinator')
                     <a href="{{ route('project.index') }}">[ View All Project ]</a>
+                    @endcan
                     <a href="{{ route('examinee.index') }}">[ View Examinee Project ]</a>
                 </div></div>
 

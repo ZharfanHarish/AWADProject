@@ -38,4 +38,6 @@ Route::resource('manage', ManageController::class);
 
 Route::POST('/project/update/{id}',[ManageController::class, 'update'])->name('project.originalupdate');
 
+Route::DELETE('/project/delete/{id}',[ProjectController::class, 'destroy'])->name('project.originaldestroy');
+
 Route::resource('examinee', ExamineeController::class);

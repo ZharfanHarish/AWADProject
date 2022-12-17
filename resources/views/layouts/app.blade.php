@@ -27,6 +27,16 @@
             text-decoration: none;
         }
     </style>
+    <script>
+    function myFunction() {
+    var txt;
+    if (confirm("Are you sure to delete this project?")) {
+        // user click confirm
+    } else {
+        // user click cancel
+    }
+    }
+    </script>
 </head>
 <body style="background-color:powderblue;">
     <div id="app">
