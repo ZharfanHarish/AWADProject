@@ -29,7 +29,8 @@
                             <form method='GET' action="{{ route('manage.edit', $p->id) }}"><td><?php echo $i++ ?></td><td>{{ $p->title }}</td><td>{{ $p->student->full_name }}</td><td>@if($p->first_examiner) {{$p->first_examiner->full_name}} @else - @endif</td><td>@if($p->second_examiner) {{$p->second_examiner->full_name}} @else - @endif</td><td>{{ $p->project_progress }}</td><td>{{ $p->project_status}}</td><input type="hidden" id="project" name="project" value="{{ $p }}"><td><button type="submit" class="btn btn-primary">Manage</button></td></form>
                         </tr>
                 @endforeach
-                </table>   
+                </table> 
+                {{$projects->links()}}
                 </div>
             </div>
         </div>

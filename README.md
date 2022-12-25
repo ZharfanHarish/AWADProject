@@ -71,6 +71,9 @@
     <ul>
         <li>Improved Authorization Logic (Presentation and Routes)</li>
     </ul><br>
+    <li>Version 12
+    <ul>
+        <li>Implemented Pagination for all tables</li>
 </ul>
 
 

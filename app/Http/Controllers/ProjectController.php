@@ -18,9 +18,9 @@ class ProjectController extends Controller
     public function index()
     {
         if(Auth::user()->role != 'coordinator')
-            return redirect()->route('home');
-        $projects = Project::all();
-        return view('viewallproject', compact('projects'))->with('failure','Access Denied');
+            return redirect()->route('home')->with('failure','Access Denied');
+        $projects = Project::paginate(10);
+        return view('viewallproject', compact('projects'));
     }
 
     /**
@@ -31,7 +31,7 @@ class ProjectController extends Controller
     public function create()
     {
         if(Auth::user()->role != 'coordinator')
-            return redirect()->route('home')->with('failure','Access Denied');;
+            return redirect()->route('home')->with('failure','Access Denied');
 
         $students = Student::all();
 

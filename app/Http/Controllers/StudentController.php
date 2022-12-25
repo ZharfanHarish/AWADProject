@@ -15,7 +15,7 @@ class StudentController extends Controller
     
     public function index()
     {
-        $students = Student::all();
+        $students = Student::paginate(10);
         $view = View::make('layouts.app');
         $view->nest('student', 'student', compact('students'));
         return $view;

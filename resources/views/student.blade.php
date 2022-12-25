@@ -29,7 +29,8 @@
                             <td><?php echo $i++ ?></td><td>{{ $s->full_name }}</td><td>{{ $s->email }}</td><td>{{ $s->contact_no }}</td><td>{{ $s->year }}</td>
                         </tr>
                 @endforeach
-                </table>    
+                </table>  
+                {{$students->links()}}  
                 </div>
             </div>
         </div>

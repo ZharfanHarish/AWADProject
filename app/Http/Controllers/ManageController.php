@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\DB;
 class ManageController extends Controller
 {
     public function index(){
-        $projects = Project::all()->where('supervisor_id', Auth::user()->lecturer_id);
+        $projects = Project::where('supervisor_id', Auth::user()->lecturer_id)->paginate(10);
         $view = View::make('layouts.app');
         $view->nest('projectmanageview', 'projectmanageview', compact('projects'));
         return $view;

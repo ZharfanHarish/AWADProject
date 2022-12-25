@@ -29,7 +29,8 @@
                             <td><?php echo $i++ ?></td><td>{{ $p->title }}</td><td>{{ $p->category }}</td><td>{{ $p->student->full_name }}</td><td>{{ $p->duration_in_month }}</td><td>{{ $p->supervisor->full_name }}</td><td>@if($p->first_examiner) {{$p->first_examiner->full_name}} @else - @endif</td><td>@if($p->second_examiner) {{$p->second_examiner->full_name}} @else - @endif</td><td>{{ $p->project_progress }}</td><td>{{ $p->project_status }}</td>
                         </tr>
                 @endforeach
-                </table>   
+                </table>  
+                {{$projects->links()}}
                 </div>
             </div>
         </div>
